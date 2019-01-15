@@ -6,6 +6,7 @@
 /.gradle
 
 # BUILD
+/build
 /out
 
 # SECRETS

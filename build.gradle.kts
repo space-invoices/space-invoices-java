@@ -3,6 +3,6 @@ plugins {
 }
 
 allprojects {
-    group = "si.studio404"
-    version = "0.0.1"
+    group = Application.groupId
+    version = Application.versionName
 }
