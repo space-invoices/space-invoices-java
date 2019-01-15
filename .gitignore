@@ -1,0 +1,11 @@
+# IDEA
+/.idea
+
+# GRADLE
+/.gradle
+
+# BUILD
+/out
+
+# SECRETS
+publish.properties
