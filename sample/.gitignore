@@ -7,6 +7,3 @@
 
 # BUILD
 /out
-
-# SECRETS
-publish.properties

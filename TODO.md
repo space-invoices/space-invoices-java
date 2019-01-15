@@ -8,9 +8,9 @@
 
 #### Structure
 - [X] TODO / README / CHANGELOG
-- [ ] Base Module
-- [ ] Library Module
-- [ ] Sample Module (jvm/android?)
+- [X] Base Module
+- [X] Library Module
+- [X] Sample Module
 
 #### Dependency
 - [ ] REST
