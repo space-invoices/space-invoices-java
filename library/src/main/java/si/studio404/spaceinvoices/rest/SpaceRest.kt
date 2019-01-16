@@ -68,9 +68,6 @@ internal class SpaceRest(
         connectTimeout(10, TimeUnit.SECONDS)
         writeTimeout(10, TimeUnit.SECONDS)
         readTimeout(15, TimeUnit.SECONDS)
-        addInterceptor(HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BASIC
-        })
     }.build()
 
 }
