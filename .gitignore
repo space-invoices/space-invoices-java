@@ -11,3 +11,7 @@
 
 # SECRETS
 publish.properties
+
+
+# IDEA BUG
+.attach_pid*

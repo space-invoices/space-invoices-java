@@ -12,7 +12,7 @@ The Space Invoices Java SDK provides an easy way to access Space Invoices API fr
 
 Latest official release:
 ``` gradle
-implementation 'si.studio404:space-invoices-java:0.0.1'
+implementation("si.studio404:space-invoices-java:0.0.1")
 ```
 
 ## Usage
@@ -20,12 +20,16 @@ implementation 'si.studio404:space-invoices-java:0.0.1'
 **TOKEN** and **ACCOUNT_ID** can be obtained by signing up for a developer account on our website [spaceinvoices.com](http://spaceinvoices.com)
 
 ``` kt
-
+val spaceInvoices = SpaceInvoices(TOKEN)
 ```
 
 Example usage of Space Invoices Java SDK for creating an Organization.
 ``` kt
-
+val response = spaceInvoices.createOrganization(
+    accountId = ACCOUNT_ID,
+    name = "SpaceX",
+    country = "USA"
+)
 ```
 
 Visit our website [spaceinvoices.com](http://spaceinvoices.com)

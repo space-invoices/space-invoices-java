@@ -13,8 +13,8 @@
 - [X] Sample Module
 
 #### Dependency
-- [ ] REST
-- [ ] GSON
+- [X] REST
+- [X] GSON
 
 #### Deploy
 - [ ] FatJar
@@ -29,23 +29,23 @@
 - [ ] Where operators
 
 #### Errors
-- [ ] Error modeling
+- [X] Error modeling
 
 #### Apollo UI
 - [ ] what is this
 
 
 #### Accounts
-- [ ] Auth Account
-- [ ] New Account
-- [ ] Check if email is unique
-- [ ] Read Account details
+- [X] Auth Account
+- [X] New Account
+- [X] Check if email is unique
+- [X] Read Account details
 
 #### Organizations
 - [ ] New Organization
 - [ ] Add logo or Image to Organization
-- [ ] Read Organization details
-- [ ] List Organizations
+- [X] Read Organization details
+- [X] List Organizations
 
 #### Documents
 - [ ] New Document
