@@ -19,11 +19,30 @@ implementation("si.studio404:space-invoices-java:0.0.1")
 
 **TOKEN** and **ACCOUNT_ID** can be obtained by signing up for a developer account on our website [spaceinvoices.com](http://spaceinvoices.com)
 
+### Java
+
+Get SpaceInvoices instance
+``` java
+SpaceInvoices spaceInvoices = new SpaceInvoices(TOKEN);
+```
+
+Create new Organization
+``` java
+CreateOrganizationResponse response = spaceInvoices.createOrganization(
+    ACCOUNT_ID,
+    Organization.Builder()
+        .setName("SpaceX")
+        .setCountry("USA")
+        .build()
+);
+```
+
+### Kotlin
 ``` kt
 val spaceInvoices = SpaceInvoices(TOKEN)
 ```
 
-Example usage of Space Invoices Java SDK for creating an Organization.
+Create new Organization
 ``` kt
 val response = spaceInvoices.createOrganization(
     accountId = ACCOUNT_ID,

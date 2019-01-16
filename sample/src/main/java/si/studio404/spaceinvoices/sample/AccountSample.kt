@@ -13,7 +13,7 @@ fun main(args: Array<String>) = AccountSample().main(args)
 
 class AccountSample : CliktCommand() {
 
-    private val token by option(help = "Token - LAUNCH_CODE").required()
+    private val token by option(help = "Token / LAUNCH_CODE").required()
     private val accountId by option(help = "User's ID").required()
 
     private val email by option(help = "User's email").required()
@@ -37,10 +37,10 @@ class AccountSample : CliktCommand() {
         val loginResponse = si.login(email, password)
         println("loginResponse = $loginResponse")
 
-//        val signupResponse = si.signup("fake@email.com", "CHANGEME")
+//        val signupResponse = si.signup("rocketman@example.com", "supersecret")
 //        println("signupResponse = $signupResponse")
 
-        val isUniqueResponse = si.isEmailUnique("fake@email.com")
+        val isUniqueResponse = si.isEmailUnique("rocketman@example.com")
         println("isUniqueResponse = $isUniqueResponse")
 
         val accountDetailsResponse = si.getAccountDetails(accountId/* or loginResponse.accountId */)
