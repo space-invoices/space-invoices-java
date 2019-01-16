@@ -9,5 +9,8 @@ repositories {
 }
 
 dependencies {
-    compile(kotlin("stdlib"))
+    compile(Depends.Kotlin.stdlib)
+    compile(Depends.Network.okhttp)
+    compile(Depends.Network.okhttpInterceptor)
+    compile(Depends.Misc.gson)
 }
