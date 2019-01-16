@@ -5,9 +5,9 @@ import okhttp3.*
 import si.studio404.spaceinvoices.util.addHeaders
 import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import si.studio404.spaceinvoices.model.response.ErrorResponse
 import si.studio404.spaceinvoices.util.SpaceInvoicesException
+import si.studio404.spaceinvoices.util.newRequest
 
 internal class SpaceRest(
     httpClient: OkHttpClient?
@@ -26,11 +26,10 @@ internal class SpaceRest(
         headers: Map<String, String>
     ): T {
         return execute(
-            Request.Builder()
-                .url(url)
-                .addHeaders(headers)
-                .get()
-                .build()
+            newRequest(url) {
+                addHeaders(headers)
+                get()
+            }
         )
     }
 
@@ -40,11 +39,10 @@ internal class SpaceRest(
         body: Any
     ): T {
         return execute(
-            Request.Builder()
-                .url(url)
-                .addHeaders(headers)
-                .post(RequestBody.create(jsonContentType, gson.toJson(body)))
-                .build()
+            newRequest(url) {
+                addHeaders(headers)
+                post(RequestBody.create(jsonContentType, gson.toJson(body)))
+            }
         )
     }
 
