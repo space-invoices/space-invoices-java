@@ -20,18 +20,19 @@ class AccountSample : CliktCommand() {
 
     override fun run() {
         val si = SpaceInvoices(token, testing = testing.toBoolean())
+        println("token = ${si.token}")
 
         val loginResponse = si.login(email, password)
-        println(loginResponse)
+        println("loginResponse = $loginResponse")
 
 //        val signupResponse = si.signup("fake@email.com", "CHANGEME")
-//        println(signupResponse)
+//        println("signupResponse = $signupResponse")
 
         val isUniqueResponse = si.isEmailUnique("fake@email.com")
-        println(isUniqueResponse)
+        println("isUniqueResponse = $isUniqueResponse")
 
         val accountDetailsResponse = si.getAccountDetails(accountId/* or loginResponse.accountId */)
-        println(accountDetailsResponse)
+        println("accountDetailsResponse = $accountDetailsResponse")
     }
 
 }
