@@ -1,4 +1,4 @@
-# Space Invoices Java SDK (*In progress*)
+# Space Invoices Java SDK (IN PROGRESS)
 
 The Space Invoices Java SDK provides an easy way to access Space Invoices API from Java applications.
 
@@ -21,12 +21,12 @@ implementation("si.studio404:space-invoices-java:0.0.1")
 
 ### Java
 
-Get SpaceInvoices instance
+Get SpaceInvoices instance:
 ``` java
 SpaceInvoices spaceInvoices = new SpaceInvoices(TOKEN);
 ```
 
-Create new Organization
+Create new Organization:
 ``` java
 CreateOrganizationResponse response = spaceInvoices.createOrganization(
     ACCOUNT_ID,
@@ -38,11 +38,13 @@ CreateOrganizationResponse response = spaceInvoices.createOrganization(
 ```
 
 ### Kotlin
+
+Get SpaceInvoices instance:
 ``` kt
 val spaceInvoices = SpaceInvoices(TOKEN)
 ```
 
-Create new Organization
+Create new Organization:
 ``` kt
 val response = spaceInvoices.createOrganization(
     accountId = ACCOUNT_ID,
