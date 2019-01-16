@@ -9,6 +9,7 @@ repositories {
 }
 
 dependencies {
-    compile(kotlin("stdlib"))
     compile(project(":library"))
+    compile(Depends.Kotlin.stdlib)
+    compile(Depends.Misc.clikt)
 }
