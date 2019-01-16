@@ -10,10 +10,12 @@ import si.studio404.spaceinvoices.model.response.SignupResponse
 import si.studio404.spaceinvoices.model.response.UniqueEmailResponse
 
 internal class SpaceApi(
-    private val token: String,
-    client: OkHttpClient = DEFAULT_CLIENT,
-    testing: Boolean = false
-) : SpaceRest(client) {
+    token: String,
+    httpClient: OkHttpClient?,
+    testing: Boolean
+) {
+
+    private val rest = SpaceRest(httpClient)
 
     private val baseUrl = if (testing)
         "https://api-test.spaceinvoices.com/v1"
@@ -38,24 +40,24 @@ internal class SpaceApi(
      * ACCOUNT
      */
 
-    fun signup(email: String, password: String) = post<SignupResponse>(
+    fun signup(email: String, password: String) = rest.post<SignupResponse>(
         url = accountsUrl,
         headers = authHeaders,
         body = SignupRequest(email, password)
     )
 
-    fun login(email: String, password: String) = post<LoginResponse>(
+    fun login(email: String, password: String) = rest.post<LoginResponse>(
         url = "$accountsUrl/login",
         headers = authHeaders,
         body = LoginRequest(email, password)
     )
 
-    fun isEmailUnique(email: String) = get<UniqueEmailResponse>(
+    fun isEmailUnique(email: String) = rest.get<UniqueEmailResponse>(
         url = "$accountsUrl/is-unique?email=$email",
         headers = authHeaders
     )
 
-    fun getAccountDetails(accountId: String) = get<AccountDetails>(
+    fun getAccountDetails(accountId: String) = rest.get<AccountDetails>(
         url = "$accountsUrl/$accountId",
         headers = authHeaders
     )
@@ -64,12 +66,12 @@ internal class SpaceApi(
      * ORGANIZATION
      */
 
-    fun getOrganizationDetails(organizationId: String) = get<Organization>(
+    fun getOrganizationDetails(organizationId: String) = rest.get<Organization>(
         url = "$organizationsUrl/$organizationId",
         headers = authHeaders
     )
 
-    fun getOrganizations(accountId: String) = get<Array<Organization>>(
+    fun getOrganizations(accountId: String) = rest.get<Array<Organization>>(
         url = "$accountsUrl/$accountId/organizations",
         headers = authHeaders
     )

@@ -6,26 +6,20 @@ import si.studio404.spaceinvoices.util.addHeaders
 import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import okhttp3.logging.HttpLoggingInterceptor.Level
 import si.studio404.spaceinvoices.model.response.ErrorResponse
 import si.studio404.spaceinvoices.util.SpaceInvoicesException
 
-internal abstract class SpaceRest(
-    private val client: OkHttpClient = DEFAULT_CLIENT
+internal class SpaceRest(
+    httpClient: OkHttpClient?
 ) {
 
     private val gson = Gson()
-    private val jsonMime = MediaType.parse("application/json; charset=utf-8")
+    private val client = httpClient ?: defaultHttpClient()
+    private val jsonContentType = MediaType.parse("application/json; charset=utf-8")
 
-    companion object {
-        internal val DEFAULT_CLIENT
-            get() = OkHttpClient.Builder().apply {
-                connectTimeout(10, TimeUnit.SECONDS)
-                writeTimeout(10, TimeUnit.SECONDS)
-                readTimeout(15, TimeUnit.SECONDS)
-                addInterceptor(HttpLoggingInterceptor().apply { level = Level.BASIC })
-            }.build()
-    }
+    /*
+     * REST
+     */
 
     internal inline fun <reified T> get(
         url: String,
@@ -49,10 +43,14 @@ internal abstract class SpaceRest(
             Request.Builder()
                 .url(url)
                 .addHeaders(headers)
-                .post(RequestBody.create(jsonMime, gson.toJson(body)))
+                .post(RequestBody.create(jsonContentType, gson.toJson(body)))
                 .build()
         )
     }
+
+    /*
+     * OTHER
+     */
 
     private inline fun <reified T> execute(request: Request): T {
         client.newCall(request).execute().use { response ->
@@ -65,5 +63,14 @@ internal abstract class SpaceRest(
             }
         }
     }
+
+    private fun defaultHttpClient() = OkHttpClient.Builder().apply {
+        connectTimeout(10, TimeUnit.SECONDS)
+        writeTimeout(10, TimeUnit.SECONDS)
+        readTimeout(15, TimeUnit.SECONDS)
+        addInterceptor(HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BASIC
+        })
+    }.build()
 
 }
