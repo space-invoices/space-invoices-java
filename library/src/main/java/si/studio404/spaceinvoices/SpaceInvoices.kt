@@ -34,7 +34,7 @@ class SpaceInvoices(
         return api.signup(email, password)
     }
 
-    fun getAccountDetails(accountId: String): Account {
+    fun getAccount(accountId: String): Account {
         return api.getAccount(accountId)
     }
 
@@ -46,7 +46,7 @@ class SpaceInvoices(
         return api.getOrganizations(accountId)
     }
 
-    fun getOrganizationDetails(organizationId: String): Organization {
+    fun getOrganization(organizationId: String): Organization {
         return api.getOrganization(organizationId)
     }
 
