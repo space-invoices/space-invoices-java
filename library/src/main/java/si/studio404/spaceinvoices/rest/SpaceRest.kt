@@ -46,6 +46,31 @@ internal class SpaceRest(
         )
     }
 
+    internal inline fun <reified T> put(
+        url: String,
+        headers: Map<String, String> = emptyMap(),
+        body: Any
+    ): T {
+        return execute(
+            newRequest(url) {
+                addHeaders(headers)
+                put(RequestBody.create(jsonContentType, gson.toJson(body)))
+            }
+        )
+    }
+
+    internal inline fun <reified T> delete(
+        url: String,
+        headers: Map<String, String> = emptyMap()
+    ): T {
+        return execute(
+            newRequest(url) {
+                addHeaders(headers)
+                delete()
+            }
+        )
+    }
+
     /*
      * OTHER
      */
@@ -53,6 +78,7 @@ internal class SpaceRest(
     private inline fun <reified T> execute(request: Request): T {
         client.newCall(request).execute().use { response ->
             val json = response.body()?.string()
+            println("RECEIVED: $json")
             if (response.isSuccessful) {
                 return gson.fromJson<T>(json, T::class.java)
             } else {

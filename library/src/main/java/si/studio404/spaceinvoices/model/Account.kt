@@ -1,8 +1,9 @@
-package si.studio404.spaceinvoices.model.response
+package si.studio404.spaceinvoices.model
 
 import com.google.gson.annotations.SerializedName
 
-data class AccountDetails(
+//@Builder
+data class Account(
     @SerializedName("id")       val accountId: String,
     @SerializedName("email")    val email: String
 )

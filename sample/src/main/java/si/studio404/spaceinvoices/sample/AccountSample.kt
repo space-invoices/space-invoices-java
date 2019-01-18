@@ -4,10 +4,8 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import si.studio404.spaceinvoices.SpaceInvoices
-import java.util.concurrent.TimeUnit
+import si.studio404.spaceinvoices.model.Organization
 
 fun main(args: Array<String>) = AccountSample().main(args)
 
