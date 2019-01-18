@@ -96,6 +96,6 @@
 #### Taxes
 - [ ] Get all Taxes
 - [ ] Create Tax
-- [ ] Add Rate for a Tax
 - [ ] Update Tax
 - [ ] Delete Tax
+- [ ] Add Tax Rate

@@ -4,7 +4,10 @@ import okhttp3.OkHttpClient
 import si.studio404.spaceinvoices.model.*
 import si.studio404.spaceinvoices.model.request.LoginRequest
 import si.studio404.spaceinvoices.model.request.SignupRequest
-import si.studio404.spaceinvoices.model.response.*
+import si.studio404.spaceinvoices.model.response.DeleteResponse
+import si.studio404.spaceinvoices.model.response.LoginResponse
+import si.studio404.spaceinvoices.model.response.SignupResponse
+import si.studio404.spaceinvoices.model.response.UniqueEmailResponse
 
 internal class SpaceApi(
     token: String,
@@ -223,6 +226,8 @@ internal class SpaceApi(
         headers = mapOf(authHeader)
     )
 
+    // getItem?
+
     fun createItem(organizationId: String, item: Item) = rest.post<Item>(
         url = "$organizationsUrl/$organizationId/items",
         headers = mapOf(authHeader),
@@ -291,6 +296,8 @@ internal class SpaceApi(
         body = recurrence
     )
 
+    // updateRecurrence?
+
     fun deleteRecurrence(recurrenceId: String) = rest.delete<DeleteResponse>(
         url = "$recurrencesUrl/$recurrenceId",
         headers = mapOf(authHeader)
@@ -311,12 +318,6 @@ internal class SpaceApi(
         body = tax
     )
 
-    fun addTaxRate(taxId: String, taxRate: TaxRate) = rest.put<TaxRate>(
-        url = "$taxesUrl/$taxId/taxRates",
-        headers = mapOf(authHeader),
-        body = taxRate
-    )
-
     fun updateTax(taxId: String, tax: Tax) = rest.put<Tax>(
         url = "$taxesUrl/$taxId",
         headers = mapOf(authHeader),
@@ -326,6 +327,12 @@ internal class SpaceApi(
     fun deleteTax(taxId: String) = rest.delete<DeleteResponse>(
         url = "$taxesUrl/$taxId",
         headers = mapOf(authHeader)
+    )
+
+    fun addTaxRate(taxId: String, taxRate: TaxRate) = rest.put<TaxRate>(
+        url = "$taxesUrl/$taxId/taxRates",
+        headers = mapOf(authHeader),
+        body = taxRate
     )
 
 }
