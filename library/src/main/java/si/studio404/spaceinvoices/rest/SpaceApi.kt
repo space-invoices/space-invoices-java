@@ -329,7 +329,7 @@ internal class SpaceApi(
         headers = mapOf(authHeader)
     )
 
-    fun addTaxRate(taxId: String, taxRate: TaxRate) = rest.put<TaxRate>(
+    fun addTaxRate(taxId: String, taxRate: Tax.Rate) = rest.put<Tax.Rate>(
         url = "$taxesUrl/$taxId/taxRates",
         headers = mapOf(authHeader),
         body = taxRate

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 //@Builder
 data class Recurrence(
-    @SerializedName("id")               val recurrenceId: String,
+    @SerializedName("id")               val recurrenceId: String = "",
     @SerializedName("documentId")       val documentId: String,
     @SerializedName("organizationId")   val organizationId: String,
     @SerializedName("amount")           val amount: Int,

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 //@Builder
 data class Client(
-    @SerializedName("id")               val clientId: String,
+    @SerializedName("id")               val clientId: String = "",
     @SerializedName("organizationId")   val organizationId: String,
     @SerializedName("name")             val name: String,
     @SerializedName("email")            val email: String,
