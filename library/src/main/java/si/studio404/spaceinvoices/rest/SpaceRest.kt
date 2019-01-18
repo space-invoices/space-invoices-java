@@ -1,13 +1,15 @@
 package si.studio404.spaceinvoices.rest
 
 import com.google.gson.Gson
-import okhttp3.*
-import si.studio404.spaceinvoices.util.addHeaders
-import java.util.concurrent.TimeUnit
+import okhttp3.MediaType
 import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
 import si.studio404.spaceinvoices.model.response.ErrorResponse
 import si.studio404.spaceinvoices.util.SpaceInvoicesException
+import si.studio404.spaceinvoices.util.addHeaders
 import si.studio404.spaceinvoices.util.newRequest
+import java.util.concurrent.TimeUnit
 
 internal class SpaceRest(
     httpClient: OkHttpClient?
@@ -38,10 +40,12 @@ internal class SpaceRest(
         headers: Map<String, String> = emptyMap(),
         body: Any
     ): T {
+        val json = gson.toJson(body)
+        println("SENT [POST]: $json")
         return execute(
             newRequest(url) {
                 addHeaders(headers)
-                post(RequestBody.create(jsonContentType, gson.toJson(body)))
+                post(RequestBody.create(jsonContentType, json))
             }
         )
     }
@@ -51,10 +55,12 @@ internal class SpaceRest(
         headers: Map<String, String> = emptyMap(),
         body: Any
     ): T {
+        val json = gson.toJson(body)
+        println("SENT [PUT]: $json")
         return execute(
             newRequest(url) {
                 addHeaders(headers)
-                put(RequestBody.create(jsonContentType, gson.toJson(body)))
+                put(RequestBody.create(jsonContentType, json))
             }
         )
     }

@@ -20,22 +20,22 @@ class SpaceInvoices(
      * ACCOUNTS
      */
 
+    fun signup(email: String, password: String): SignupResponse {
+        return api.signup(email, password)
+    }
+
     // this does not require token
     fun login(email: String, password: String): LoginResponse {
         return api.login(email, password)
     }
 
+    fun getAccount(accountId: String): Account {
+        return api.getAccount(accountId)
+    }
+
     // this does not require token
     fun isEmailUnique(email: String): Boolean {
         return api.isEmailUnique(email).isUnique
-    }
-
-    fun signup(email: String, password: String): SignupResponse {
-        return api.signup(email, password)
-    }
-
-    fun getAccount(accountId: String): Account {
-        return api.getAccount(accountId)
     }
 
     /*
@@ -255,7 +255,7 @@ class SpaceInvoices(
         return api.deleteTax(taxId)
     }
 
-    fun addTaxRate(taxId: String, taxRate: TaxRate): TaxRate {
+    fun addTaxRate(taxId: String, taxRate: Tax.Rate): Tax.Rate {
         return api.addTaxRate(taxId, taxRate)
     }
 
