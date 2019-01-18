@@ -23,7 +23,6 @@
 
 ## API
 
-
 #### Filters
 - [ ] Filters
 - [ ] Where operators
@@ -101,3 +100,18 @@
 - [X] Update Tax
 - [X] Delete Tax
 - [X] Add Tax Rate
+
+
+## Samples
+
+- [X] Accounts
+- [ ] Organizations
+- [ ] Documents
+- [X] Countries
+- [X] Currencies
+- [ ] Clients
+- [ ] Companies
+- [ ] Items
+- [ ] Payments
+- [ ] Recurrences
+- [ ] Taxes
