@@ -8,10 +8,10 @@ fun main(args: Array<String>) {
     val token = TokenProvider.getToken()
 
     // create mock user credentials
-    val email = "test${System.currentTimeMillis()}@examle.com"
+    val email = "test${System.currentTimeMillis()}@example.com"
     val password = "supersecret"
 
-    // if testing is true it runs on test backend
+    // set testing to true to run on test backend
     val si = SpaceInvoices(token, testing = true)
     println("token = ${si.token}")
 
@@ -19,11 +19,11 @@ fun main(args: Array<String>) {
     val signupResponse = si.signup(email, password)
     println("signupResponse = $signupResponse")
 
-    // login into mock account
+    // login into created account
     val loginResponse = si.login(email, password)
     println("loginResponse = $loginResponse")
 
-    // get account info
+    // get created account info
     val accountResponse = si.getAccount(loginResponse.accountId)
     println("accountResponse = $accountResponse")
 

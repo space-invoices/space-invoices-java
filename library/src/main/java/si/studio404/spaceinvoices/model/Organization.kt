@@ -1,11 +1,10 @@
 package si.studio404.spaceinvoices.model
 
 import com.google.gson.annotations.SerializedName
-import si.studio404.spaceinvoices.util.SpaceInvoicesException
 
 //@Builder
 data class Organization(
-    @SerializedName("id")           val organizationId: String,
+    @SerializedName("id")           val organizationId: String = "",
     @SerializedName("name")         val name: String,
     @SerializedName("address")      val address: String? = null,
     @SerializedName("city")         val city: String? = null,
