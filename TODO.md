@@ -31,30 +31,27 @@
 #### Errors
 - [X] Error modeling
 
-#### Apollo UI
-- [ ] what is this
-
 
 #### Accounts
-- [X] Auth Account
-- [X] New Account
+- [X] Login Account
+- [X] Signup Account
+- [X] Get Account
 - [X] Check if email is unique
-- [X] Read Account details
 
 #### Organizations
-- [ ] New Organization
-- [ ] Add logo or Image to Organization
-- [X] Read Organization details
-- [X] List Organizations
+- [X] Get all Organizations
+- [X] Get Organization
+- [ ] Create Organization
+- [ ] Add Image to Organization
 
 #### Documents
-- [ ] New Document
-- [ ] List Documents
-- [ ] Get Document by ID
-- [ ] Edit Document
+- [ ] Get all Documents
+- [ ] Get Document
+- [ ] Create Document
+- [ ] Update Document
 - [ ] Delete Document
-- [ ] Create PDF
-- [ ] Send in email
+- [ ] Get PDF
+- [ ] Send email
 
 #### Countries
 - [ ] Get all Countries
@@ -63,42 +60,42 @@
 - [ ] Get all Currencies
 
 #### Clients
-- [ ] New Client
+- [ ] Get all Clients
+- [ ] Search Clients
+- [ ] Get Client
+- [ ] Create Client
 - [ ] Update Client
 - [ ] Delete Client
-- [ ] List Clients
-- [ ] Search Clients
-- [ ] Get Client by ID
 
 #### Companies
-- [ ] List Companies
+- [ ] Get all Companies
 - [ ] Search Companies
 
 #### Items
-- [ ] New Item
+- [ ] Get all Items
+- [ ] Search Items
+- [ ] Get Item (missing?)
+- [ ] Create Item
 - [ ] Update Item
 - [ ] Delete Item
-- [ ] List Items
-- [ ] Search Items
-- [ ] Get Item by ID (missing?)
 
 #### Payments
-- [ ] New Payment
-- [ ] Update Payment
+- [ ] Get all Payments
+- [ ] Get Payments for Document
+- [ ] Create Payment
+- [ ] Edit Payment
 - [ ] Delete Payment
-- [ ] List Payments
-- [ ] List Payments for Document
 
 #### Recurrences
-- [ ] New Recurrence
+- [ ] Get all Recurrences
+- [ ] Get Recurrences for Document
+- [ ] Create Recurrence
 - [ ] Update Recurrence (missing?)
 - [ ] Delete Recurrence
-- [ ] List Recurrences
-- [ ] List Recurrences for Document
 
 #### Taxes
-- [ ] New Tax
-- [ ] New Rate for a Tax
+- [ ] Get all Taxes
+- [ ] Create Tax
+- [ ] Add Rate for a Tax
 - [ ] Update Tax
 - [ ] Delete Tax
-- [ ] List Taxes

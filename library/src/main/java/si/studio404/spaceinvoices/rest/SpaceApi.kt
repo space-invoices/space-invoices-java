@@ -109,7 +109,7 @@ internal class SpaceApi(
         body = document
     )
 
-    fun editDocument(documentId: String, document: Document) = rest.put<Document>(
+    fun updateDocument(documentId: String, document: Document) = rest.put<Document>(
         url = "$documentsUrl/$documentId",
         headers = mapOf(authHeader),
         body = document
@@ -184,7 +184,7 @@ internal class SpaceApi(
         body = client
     )
 
-    fun editClient(organizationId: String, client: Client) = rest.put<Client>(
+    fun updateClient(organizationId: String, client: Client) = rest.put<Client>(
         url = "$organizationsUrl/$organizationId/clients",
         headers = mapOf(authHeader),
         body = client
@@ -229,7 +229,7 @@ internal class SpaceApi(
         body = item
     )
 
-    fun editItem(itemId: String, item: Item) = rest.put<Item>(
+    fun updateItem(itemId: String, item: Item) = rest.put<Item>(
         url = "$itemsUrl/$itemId",
         headers = mapOf(authHeader),
         body = item
@@ -260,7 +260,7 @@ internal class SpaceApi(
         body = payment
     )
 
-    fun editPayment(paymentId: String, payment: Payment) = rest.put<Payment>(
+    fun updatePayment(paymentId: String, payment: Payment) = rest.put<Payment>(
         url = "$paymentsUrl/$paymentId",
         headers = mapOf(authHeader),
         body = payment
@@ -297,7 +297,7 @@ internal class SpaceApi(
     )
 
     /*
-     * TEXES
+     * TAXES
      */
 
     fun getTaxes(organizationId: String) = rest.get<Array<Tax>>(
@@ -317,7 +317,7 @@ internal class SpaceApi(
         body = taxRate
     )
 
-    fun editTax(taxId: String, tax: Tax) = rest.put<Tax>(
+    fun updateTax(taxId: String, tax: Tax) = rest.put<Tax>(
         url = "$taxesUrl/$taxId",
         headers = mapOf(authHeader),
         body = tax
