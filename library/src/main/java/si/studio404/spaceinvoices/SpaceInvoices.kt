@@ -50,9 +50,13 @@ class SpaceInvoices(
         return api.getOrganization(organizationId)
     }
 
-    fun createOrganization(organizationId: String, organization: Organization): Organization {
-        return api.createOrganization(organizationId, organization)
+    fun createOrganization(accountId: String, organization: Organization): Organization {
+        return api.createOrganization(accountId, organization)
     }
+
+    // updateOrganization?
+
+    // deleteOrganization?
 
     fun addLogoToOrganization(organizationId: String) {
         TODO()
