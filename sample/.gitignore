@@ -8,3 +8,6 @@
 # BUILD
 /build
 /out
+
+# SECRETS
+*TokenProvider.kt

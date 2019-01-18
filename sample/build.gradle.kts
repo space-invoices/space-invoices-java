@@ -11,5 +11,4 @@ repositories {
 dependencies {
     compile(project(":library"))
     compile(Depends.Kotlin.stdlib)
-    compile(Depends.Misc.clikt)
 }

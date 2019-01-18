@@ -16,7 +16,6 @@ object Versions {
 
     /* Misc */
     const val gson = "2.8.5"
-    const val clikt = "1.6.0"
 
     /* Test */
     const val junit = "4.12"
@@ -35,7 +34,6 @@ object Depends {
 
     object Misc {
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
-        const val clikt = "com.github.ajalt:clikt:${Versions.clikt}"
     }
 
     object Test {
