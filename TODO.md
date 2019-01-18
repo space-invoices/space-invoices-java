@@ -41,61 +41,63 @@
 #### Organizations
 - [X] Get all Organizations
 - [X] Get Organization
-- [ ] Create Organization
+- [X] Create Organization
+- [ ] Update Organization (missing?)
+- [ ] Delete Organization (missing?)
 - [ ] Add Image to Organization
 
 #### Documents
-- [ ] Get all Documents
-- [ ] Get Document
-- [ ] Create Document
-- [ ] Update Document
-- [ ] Delete Document
+- [X] Get all Documents
+- [X] Get Document
+- [X] Create Document
+- [X] Update Document
+- [X] Delete Document
 - [ ] Get PDF
 - [ ] Send email
 
 #### Countries
-- [ ] Get all Countries
+- [X] Get all Countries
 
 #### Currencies
-- [ ] Get all Currencies
+- [X] Get all Currencies
 
 #### Clients
-- [ ] Get all Clients
-- [ ] Search Clients
-- [ ] Get Client
-- [ ] Create Client
-- [ ] Update Client
-- [ ] Delete Client
+- [X] Get all Clients
+- [X] Search Clients
+- [X] Get Client
+- [X] Create Client
+- [X] Update Client
+- [X] Delete Client
 
 #### Companies
-- [ ] Get all Companies
-- [ ] Search Companies
+- [X] Get all Companies
+- [X] Search Companies
 
 #### Items
-- [ ] Get all Items
-- [ ] Search Items
+- [X] Get all Items
+- [X] Search Items
 - [ ] Get Item (missing?)
-- [ ] Create Item
-- [ ] Update Item
-- [ ] Delete Item
+- [X] Create Item
+- [X] Update Item
+- [X] Delete Item
 
 #### Payments
-- [ ] Get all Payments
-- [ ] Get Payments for Document
-- [ ] Create Payment
-- [ ] Edit Payment
-- [ ] Delete Payment
+- [X] Get all Payments
+- [X] Get Payments for Document
+- [X] Create Payment
+- [X] Edit Payment
+- [X] Delete Payment
 
 #### Recurrences
-- [ ] Get all Recurrences
-- [ ] Get Recurrences for Document
-- [ ] Create Recurrence
+- [X] Get all Recurrences
+- [X] Get Recurrences for Document
+- [X] Create Recurrence
 - [ ] Update Recurrence (missing?)
-- [ ] Delete Recurrence
+- [X] Delete Recurrence
 
 #### Taxes
-- [ ] Get all Taxes
-- [ ] Create Tax
-- [ ] Update Tax
-- [ ] Delete Tax
-- [ ] Add Tax Rate
+- [X] Get all Taxes
+- [X] Create Tax
+- [X] Update Tax
+- [X] Delete Tax
+- [X] Add Tax Rate
